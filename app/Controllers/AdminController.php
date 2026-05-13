@@ -141,11 +141,11 @@ class AdminController extends BaseController
             return redirect()->back()->with('error', 'Cet email existe déjà')->withInput();
         }
 
-        // Créer l'employé
+        // Créer l'employé (le model hashera le password automatiquement)
         $employe_id = $this->employeModel->insert([
             'nom' => $nom,
             'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'password' => $password,  // Le model le hashera via beforeInsert
             'departement_id' => $departement_id,
             'role' => $role,
             'created_at' => date('Y-m-d H:i:s'),

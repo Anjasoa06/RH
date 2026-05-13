@@ -30,9 +30,12 @@ class EmployeController extends BaseController
                 ->select('conges.*, types_conge.nom as type_nom')
                 ->join('types_conge', 'types_conge.id = conges.type_conge_id')
                 ->where('employe_id', $userId)
-                ->limit(5)
                 ->findAll(),
-            'soldes' => $this->soldeModel->where('employe_id', $userId)->findAll(),
+            'soldes' => $this->soldeModel
+                ->select('soldes.*, types_conge.nom as type_nom')
+                ->join('types_conge', 'types_conge.id = soldes.type_conge_id')
+                ->where('employe_id', $userId)
+                ->findAll(),
         ];
         return view('employe/dashboard', $data);
     }
