@@ -3,11 +3,10 @@
 <?= $this->section('content') ?>
 <div class="form-section" style="margin-bottom:1.5rem">
     <h3><i class="bi bi-building" style="color:var(--forest);margin-right:6px"></i>Ajouter un département</h3>
-    <div style="display:flex;gap:1rem">
-        <input type="text" class="f-input" placeholder="Nom du département" style="flex:1">
-        <input type="text" class="f-input" placeholder="Code" style="width:150px">
-        <button class="btn-forest"><i class="bi bi-plus"></i> Ajouter</button>
-    </div>
+    <form method="POST" action="/admin/departements" style="display:flex;gap:1rem">
+        <input type="text" name="nom" class="f-input" placeholder="Nom du département" style="flex:1" required>
+        <button type="submit" class="btn-forest"><i class="bi bi-plus"></i> Ajouter</button>
+    </form>
 </div>
 
 <div class="data-card">
@@ -27,7 +26,10 @@
             <tr>
                 <td><?= $dept['nom'] ?></td>
                 <td><span style="font-family:'DM Mono',monospace;font-weight:500"><?= $dept['nb_employes'] ?></span></td>
-                <td><button class="btn-sm btn-edit"><i class="bi bi-pencil"></i></button> <button class="btn-sm btn-del"><i class="bi bi-trash"></i></button></td>
+                <td>
+                    <a href="/admin/departements/edit/<?= $dept['id'] ?>" class="btn-sm btn-edit"><i class="bi bi-pencil"></i></a>
+                    <a href="/admin/departements/delete/<?= $dept['id'] ?>" class="btn-sm btn-del" onclick="return confirm('Confirmer la suppression ?')"><i class="bi bi-trash"></i></a>
+                </td>
             </tr>
             <?php endforeach; ?>
             <?php if (empty($departements)): ?>

@@ -3,16 +3,11 @@
 <?= $this->section('content') ?>
 <div class="form-section" style="margin-bottom:1.5rem">
     <h3><i class="bi bi-tags" style="color:var(--forest);margin-right:6px"></i>Ajouter un type de congé</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem">
-        <input type="text" class="f-input" placeholder="Nom du type">
-        <input type="number" class="f-input" placeholder="Jours par an" value="30">
-        <select class="f-select">
-            <option>Congé annuel</option>
-            <option>Congé maladie</option>
-            <option>Congé spécial</option>
-        </select>
-        <button class="btn-forest"><i class="bi bi-plus"></i> Ajouter</button>
-    </div>
+    <form method="POST" action="/admin/types-conge" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+        <input type="text" name="nom" class="f-input" placeholder="Nom du type" required>
+        <input type="number" name="jours_par_an" class="f-input" placeholder="Jours par an" value="30" required>
+        <button type="submit" class="btn-forest"><i class="bi bi-plus"></i> Ajouter</button>
+    </form>
 </div>
 
 <div class="data-card">
@@ -32,7 +27,10 @@
             <tr>
                 <td><?= $type['nom'] ?></td>
                 <td class="td-mono"><?= $type['jours_par_an'] ?> j</td>
-                <td><button class="btn-sm btn-edit"><i class="bi bi-pencil"></i></button> <button class="btn-sm btn-del"><i class="bi bi-trash"></i></button></td>
+                <td>
+                    <a href="/admin/types-conge/edit/<?= $type['id'] ?>" class="btn-sm btn-edit"><i class="bi bi-pencil"></i></a>
+                    <a href="/admin/types-conge/delete/<?= $type['id'] ?>" class="btn-sm btn-del" onclick="return confirm('Confirmer la suppression ?')"><i class="bi bi-trash"></i></a>
+                </td>
             </tr>
             <?php endforeach; ?>
             <?php if (empty($types_conge)): ?>
