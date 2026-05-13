@@ -25,10 +25,12 @@
                 <td class="td-muted"><?= date('d M Y', strtotime($conge['date_debut'])) ?></td>
                 <td class="td-muted"><?= date('d M Y', strtotime($conge['date_fin'])) ?></td>
                 <td class="td-mono"><?= $conge['nb_jours'] ?> j</td>
-                <td><span class="statut <?= strpos($conge['statut'], 'attente') ? 's-attente' : (strpos($conge['statut'], 'approuv') ? 's-approuvee' : 's-refusee') ?>"><?= ucfirst($conge['statut']) ?></span></td>
+                <td><span class="statut <?= strpos($conge['statut'], 'attente') ? 's-attente' : (strpos($conge['statut'], 'approuv') ? 's-approuvee' : (strpos($conge['statut'], 'annul') ? 's-annulee' : 's-refusee')) ?>"><?= ucfirst($conge['statut']) ?></span></td>
                 <td>
                     <?php if ($conge['statut'] === 'en_attente'): ?>
-                    <button class="btn-sm btn-cancel" onclick="return confirm('Annuler cette demande ?')"><i class="bi bi-x"></i> Annuler</button>
+                    <a href="/employe/annuler/<?= $conge['id'] ?>" class="btn-sm btn-del" onclick="return confirm('Annuler cette demande ?')"><i class="bi bi-x"></i> Annuler</a>
+                    <?php elseif ($conge['statut'] === 'approuvee'): ?>
+                    <a href="/employe/annuler/<?= $conge['id'] ?>" class="btn-sm btn-del" onclick="return confirm('Annuler ce congé approuvé (soldes seront recédités) ?')"><i class="bi bi-x-circle"></i> Annuler</a>
                     <?php else: ?>
                     <span class="td-muted" style="font-size:.75rem">—</span>
                     <?php endif; ?>

@@ -6,6 +6,7 @@ use App\Models\EmployeModel;
 use App\Models\DepartementModel;
 use App\Models\TypeCongeModel;
 use App\Models\CongeModel;
+use App\Models\SoldeModel;
 
 class AdminController extends BaseController
 {
@@ -13,6 +14,7 @@ class AdminController extends BaseController
     protected $departementModel;
     protected $typeCongeModel;
     protected $congeModel;
+    protected $soldeModel;
 
     public function __construct()
     {
@@ -20,6 +22,7 @@ class AdminController extends BaseController
         $this->departementModel = new DepartementModel();
         $this->typeCongeModel = new TypeCongeModel();
         $this->congeModel = new CongeModel();
+        $this->soldeModel = new SoldeModel();
     }
 
     public function index()
@@ -127,7 +130,19 @@ class AdminController extends BaseController
         $departement_id = $this->request->getPost('departement_id');
         $role = $this->request->getPost('role');
 
-        $this->employeModel->insert([
+        // Validation basique
+        if (empty($nom) || empty($email) || empty($password) || empty($departement_id) || empty($role)) {
+            return redirect()->back()->with('error', 'Tous les champs sont requis')->withInput();
+        }
+
+        // Vérifier que l'email n'existe pas déjà
+        $existing = $this->employeModel->where('email', $email)->first();
+        if ($existing) {
+            return redirect()->back()->with('error', 'Cet email existe déjà')->withInput();
+        }
+
+        // Créer l'employé
+        $employe_id = $this->employeModel->insert([
             'nom' => $nom,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
@@ -136,7 +151,21 @@ class AdminController extends BaseController
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return redirect()->to('/admin/employes')->with('success', 'Employé créé avec succès');
+        if (!$employe_id) {
+            return redirect()->back()->with('error', 'Erreur lors de la création de l\'employé')->withInput();
+        }
+
+        // Initialiser les soldes pour tous les types de congé
+        $types = $this->typeCongeModel->findAll();
+        foreach ($types as $type) {
+            $this->soldeModel->insert([
+                'employe_id' => $employe_id,
+                'type_conge_id' => $type['id'],
+                'solde' => $type['jours_par_an'],
+            ]);
+        }
+
+        return redirect()->to('/admin/employes')->with('success', 'Employé créé avec succès! Email: ' . $email);
     }
 
     public function editEmploye($id)
@@ -223,12 +252,22 @@ class AdminController extends BaseController
         $nom = $this->request->getPost('nom');
         $jours_par_an = $this->request->getPost('jours_par_an');
 
-        $this->typeCongeModel->insert([
+        $type_id = $this->typeCongeModel->insert([
             'nom' => $nom,
             'jours_par_an' => $jours_par_an,
         ]);
 
-        return redirect()->to('/admin/types-conge')->with('success', 'Type de congé créé avec succès');
+        // Initialiser les soldes pour tous les employés existants
+        $employes = $this->employeModel->findAll();
+        foreach ($employes as $employe) {
+            $this->soldeModel->insert([
+                'employe_id' => $employe['id'],
+                'type_conge_id' => $type_id,
+                'solde' => $jours_par_an,
+            ]);
+        }
+
+        return redirect()->to('/admin/types-conge')->with('success', 'Type de congé créé et soldes initialisés pour tous les employés');
     }
 
     public function editTypeCongé($id)

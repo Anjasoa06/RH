@@ -8,7 +8,15 @@
         <div class="form-grid-2" style="margin-bottom:1rem">
             <div class="f-group"><label class="f-label">Nom</label><input type="text" name="nom" class="f-input" placeholder="Jean Rakoto" required></div>
             <div class="f-group"><label class="f-label">Email</label><input type="email" name="email" class="f-input" placeholder="jean@techmada.mg" required></div>
-            <div class="f-group"><label class="f-label">Mot de passe</label><input type="password" name="password" class="f-input" placeholder="••••••" required></div>
+            <div class="f-group" style="position:relative">
+                <label class="f-label">Mot de passe</label>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <input type="password" name="password" class="f-input" placeholder="••••••" required id="password-input" style="flex:1">
+                    <button type="button" class="btn-sm" style="background:var(--light);border:1px solid var(--border);padding:6px 10px;cursor:pointer;border-radius:4px" onclick="togglePassword()">
+                        <i class="bi bi-eye" id="eye-icon"></i>
+                    </button>
+                </div>
+            </div>
             <div class="f-group"><label class="f-label">Département</label>
                 <select name="departement_id" class="f-select" required>
                     <option value="">-- Choisir --</option>
@@ -22,6 +30,21 @@
         <div class="flash flash-info" style="margin-bottom:1rem"><i class="bi bi-info-circle-fill"></i> Les soldes seront initialisés automatiquement.</div>
         <button type="submit" class="btn-forest"><i class="bi bi-plus"></i> Créer l'employé</button>
     </form>
+    <script>
+    function togglePassword() {
+        const input = document.getElementById('password-input');
+        const icon = document.getElementById('eye-icon');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('bi-eye');
+            icon.classList.add('bi-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.remove('bi-eye-slash');
+            icon.classList.add('bi-eye');
+        }
+    }
+    </script>
 </div>
 
 <!-- Liste employés -->

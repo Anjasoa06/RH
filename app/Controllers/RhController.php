@@ -43,12 +43,35 @@ class RhController extends BaseController
 
     public function traiter($action, $id)
     {
-        $statut = ($action === 'approuver') ? 'approuvee' : 'refusee';
-        $this->congeModel->update($id, ['statut' => $statut]);
+        // Récupérer les infos du congé
+        $conge = $this->congeModel->find($id);
         
+        if (!$conge) {
+            return redirect()->back()->with('error', 'Congé non trouvé.');
+        }
+
         if ($action === 'approuver') {
-            return redirect()->back()->with('success', 'Demande approuvée avec succès.');
+            // Vérifier que le solde est suffisant
+            $solde = $this->soldeModel
+                ->where('employe_id', $conge['employe_id'])
+                ->where('type_conge_id', $conge['type_conge_id'])
+                ->first();
+            
+            if (!$solde || $solde['solde'] < $conge['nb_jours']) {
+                return redirect()->back()->with('error', 'Solde insuffisant pour cette approbation.');
+            }
+
+            // Déduire les jours du solde
+            $newSolde = $solde['solde'] - $conge['nb_jours'];
+            $this->soldeModel->update($solde['id'], ['solde' => $newSolde]);
+
+            // Mettre à jour le statut du congé
+            $this->congeModel->update($id, ['statut' => 'approuvee']);
+            
+            return redirect()->back()->with('success', 'Demande approuvée et solde débité.');
         } else {
+            // Refus: rien à faire sur les soldes (jamais débité en attente)
+            $this->congeModel->update($id, ['statut' => 'refusee']);
             return redirect()->back()->with('success', 'Demande refusée.');
         }
     }
@@ -85,5 +108,34 @@ class RhController extends BaseController
             'soldes' => $soldes,
         ];
         return view('rh/soldes', $data);
+    }
+
+    public function annuler($id)
+    {
+        $conge = $this->congeModel->find($id);
+        
+        if (!$conge) {
+            return redirect()->back()->with('error', 'Congé non trouvé.');
+        }
+
+        // Seuls les congés approuvés peuvent être annulés et recréditent les soldes
+        if ($conge['statut'] === 'approuvee') {
+            // Recrédit des soldes
+            $solde = $this->soldeModel
+                ->where('employe_id', $conge['employe_id'])
+                ->where('type_conge_id', $conge['type_conge_id'])
+                ->first();
+            
+            if ($solde) {
+                $newSolde = $solde['solde'] + $conge['nb_jours'];
+                $this->soldeModel->update($solde['id'], ['solde' => $newSolde]);
+            }
+
+            // Mettre à jour le statut à "annulee"
+            $this->congeModel->update($id, ['statut' => 'annulee']);
+            return redirect()->back()->with('success', 'Congé annulé et solde recrédit.');
+        }
+
+        return redirect()->back()->with('error', 'Seuls les congés approuvés peuvent être annulés.');
     }
 }
