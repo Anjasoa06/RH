@@ -1,0 +1,579 @@
+ERROR - 2026-05-13 06:27:29 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:27:29 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:42:03 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:42:03 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:48:00 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:48:00 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:55:59 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:55:59 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:57:35 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:57:35 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:58:07 --> Error connecting to the database: TypeError: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: mysqli::real_connect(): Argument #5 ($port) must be of type ?int, string given in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-05-13 06:58:07 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:58:34 --> Error connecting to the database: ErrorException: Trying to access array offset on null in /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php:105
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/MySQLi/Connection.php(105): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+CRITICAL - 2026-05-13 06:58:34 --> ErrorException: require(/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 06:59:16 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+CRITICAL - 2026-05-13 06:59:16 --> ErrorException: Undefined variable $title
+[Method: CLI, Route: migrate]
+in APPPATH/Views/errors/cli/error_exception.php on line 8.
+ 1 APPPATH/Views/errors/cli/error_exception.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require('/home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php')
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2026-05-13 06:59:16 --> ErrorException: Uncaught ErrorException: Undefined variable $path in /home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php:17
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/anjasoa/ANJA/web/RH/system/Debug/BaseExceptionHandler.php(270): include('...')
+#2 /home/anjasoa/ANJA/web/RH/system/Debug/BaseExceptionHandler.php(273): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#3 /home/anjasoa/ANJA/web/RH/system/Debug/ExceptionHandler.php(126): CodeIgniter\Debug\BaseExceptionHandler->render()
+#4 /home/anjasoa/ANJA/web/RH/system/Debug/Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined variable $title
+#0 /home/anjasoa/ANJA/web/RH/app/Views/errors/cli/error_exception.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/anjasoa/ANJA/web/RH/system/CLI/BaseCommand.php(133): require('...')
+#2 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError()
+#3 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#4 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#5 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#6 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#7 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#8 {main}
+[Method: CLI, Route: migrate]
+in APPPATH/Views/errors/cli/error_exception.php on line 17.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2026-05-13 06:59:35 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+ERROR - 2026-05-13 06:59:51 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+ERROR - 2026-05-13 07:00:13 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+CRITICAL - 2026-05-13 07:00:26 --> ErrorException: Constant expression contains invalid operations
+[Method: CLI, Route: migrate]
+in APPPATH/Config/Database.php on line 27.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2026-05-13 07:00:38 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+ERROR - 2026-05-13 07:00:53 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#7 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#8 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#9 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#10 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#12 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#15 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/anjasoa/ANJA/web/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/anjasoa/ANJA/web/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/anjasoa/ANJA/web/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/anjasoa/ANJA/web/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/anjasoa/ANJA/web/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/anjasoa/ANJA/web/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/anjasoa/ANJA/web/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/anjasoa/ANJA/web/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/anjasoa/ANJA/web/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/anjasoa/ANJA/web/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
