@@ -7,23 +7,15 @@
         <div class="form-grid-2">
             <div class="f-group">
                 <label class="f-label">Nom complet</label>
-                <input type="text" class="f-input" value="Soa Rakoto" readonly disabled>
+                <input type="text" class="f-input" value="<?= $employe['nom'] ?? '' ?>" readonly disabled>
             </div>
             <div class="f-group">
                 <label class="f-label">Email</label>
-                <input type="email" class="f-input" value="jean@rh.mg" readonly disabled>
-            </div>
-            <div class="f-group">
-                <label class="f-label">Département</label>
-                <input type="text" class="f-input" value="IT" readonly disabled>
+                <input type="email" class="f-input" value="<?= $employe['email'] ?? '' ?>" readonly disabled>
             </div>
             <div class="f-group">
                 <label class="f-label">Rôle</label>
-                <input type="text" class="f-input" value="Employé" readonly disabled>
-            </div>
-            <div class="f-group">
-                <label class="f-label">Date d'embauche</label>
-                <input type="text" class="f-input" value="2022-03-01" readonly disabled>
+                <input type="text" class="f-input" value="<?= ucfirst($employe['role'] ?? '') ?>" readonly disabled>
             </div>
         </div>
     </div>

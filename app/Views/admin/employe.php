@@ -23,10 +23,33 @@
         <div><input type="text" class="f-input" placeholder="Rechercher..." style="width:200px;padding:6px 10px;font-size:.8rem"></div>
     </div>
     <table class="tbl">
-        <thead><tr><th>Employé</th><th>Département</th><th>Rôle</th><th>Solde annuel</th><th>Actions</th></tr></thead>
+        <thead><tr><th>Employé</th><th>Département</th><th>Rôle</th><th>Email</th><th>Actions</th></tr></thead>
         <tbody>
-            <tr><td><div class="profile-row"><div class="avatar av-green" style="width:32px;height:32px">SR</div><div><div>Soa Rakoto</div><div>soa@techmada.mg</div></div></div></td><td>IT</td><td><span class="type-badge">employe</span></td><td><span style="font-family:'DM Mono',monospace">18 / 30 j</span></td><td><button class="btn-sm btn-edit"><i class="bi bi-pencil"></i></button> <button class="btn-sm btn-del"><i class="bi bi-trash"></i></button></td></tr>
-            <tr><td><div class="profile-row"><div class="avatar av-blue" style="width:32px;height:32px">MR</div><div><div>Marie Rabe</div><div>rh@techmada.mg</div></div></div></td><td>RH</td><td><span class="type-badge t-maladie">rh</span></td><td><span style="font-family:'DM Mono',monospace">25 / 30 j</span></td><td><button class="btn-sm btn-edit"><i class="bi bi-pencil"></i></button><button class="btn-sm btn-del"><i class="bi bi-trash"></i></button></td></tr>
+            <?php foreach ($employes as $employe): ?>
+            <tr>
+                <td>
+                    <div class="profile-row">
+                        <div class="avatar av-green" style="width:32px;height:32px"><?= strtoupper(substr($employe['nom'], 0, 2)) ?></div>
+                        <div>
+                            <div><?= $employe['nom'] ?></div>
+                            <div style="font-size:.7rem;color:var(--muted)"><?= $employe['email'] ?></div>
+                        </div>
+                    </div>
+                </td>
+                <td><?= $employe['dept_nom'] ?></td>
+                <td><span class="type-badge"><?= $employe['role'] ?></span></td>
+                <td style="font-size:.8rem"><?= $employe['email'] ?></td>
+                <td><button class="btn-sm btn-edit"><i class="bi bi-pencil"></i></button> <button class="btn-sm btn-del"><i class="bi bi-trash"></i></button></td>
+            </tr>
+            <?php endforeach; ?>
+            <?php if (empty($employes)): ?>
+            <tr>
+                <td colspan="5" style="text-align:center;padding:2rem;color:var(--muted)">
+                    <i class="bi bi-people" style="font-size:2rem;display:block;margin-bottom:.5rem;opacity:.3"></i>
+                    Aucun employé trouvé
+                </td>
+            </tr>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>

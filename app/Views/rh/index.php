@@ -39,32 +39,38 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach ($conges as $conge): ?>
             <tr>
                 <td>
                     <div class="profile-row">
-                        <div class="avatar av-green" style="width:32px;height:32px;font-size:.7rem">SR</div>
+                        <div class="avatar av-green" style="width:32px;height:32px;font-size:.7rem"><?= strtoupper(substr($conge['employe_nom'], 0, 2)) ?></div>
                         <div class="profile-info">
-                            <div class="pname">Soa Rakoto</div>
-                            <div class="pdept">IT</div>
+                            <div class="pname"><?= $conge['employe_nom'] ?></div>
+                            <div class="pdept"><?= $conge['dept_nom'] ?></div>
                         </div>
                     </div>
                 </td>
-                <td><span class="type-badge t-annuel">Annuel</span></td>
-                <td class="td-muted" style="font-size:.8rem">23/06 – 27/06/2025</td>
-                <td class="td-mono">5 j</td>
-                <td><span
-                        style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--success);font-weight:500">18
-                        j</span> dispo</td>
+                <td><span class="type-badge t-annuel"><?= $conge['type_nom'] ?></span></td>
+                <td class="td-muted" style="font-size:.8rem"><?= date('d/m', strtotime($conge['date_debut'])) ?> – <?= date('d/m/Y', strtotime($conge['date_fin'])) ?></td>
+                <td class="td-mono"><?= $conge['nb_jours'] ?> j</td>
+                <td><span style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--success);font-weight:500">18 j</span> dispo</td>
                 <td><span class="statut s-attente">en attente</span></td>
                 <td>
                     <div class="action-btns">
-                        <button class="btn-sm btn-approve" onclick="confirmerAction('approuver', 1)"><i
-                                class="bi bi-check-lg"></i> Approuver</button>
-                        <button class="btn-sm btn-refuse" onclick="confirmerAction('refuser', 1)"><i
-                                class="bi bi-x-lg"></i> Refuser</button>
+                        <button class="btn-sm btn-approve" onclick="confirmerAction('approuver', <?= $conge['id'] ?>)"><i class="bi bi-check-lg"></i> Approuver</button>
+                        <button class="btn-sm btn-refuse" onclick="confirmerAction('refuser', <?= $conge['id'] ?>)"><i class="bi bi-x-lg"></i> Refuser</button>
                     </div>
                 </td>
             </tr>
+            <?php endforeach; ?>
+            <?php if (empty($conges)): ?>
+            <tr>
+                <td colspan="7" style="text-align:center;padding:2rem;color:var(--muted)">
+                    <i class="bi bi-inbox" style="font-size:2rem;display:block;margin-bottom:.5rem;opacity:.3"></i>
+                    Aucune demande en attente
+                </td>
+            </tr>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>

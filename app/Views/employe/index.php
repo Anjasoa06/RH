@@ -16,36 +16,33 @@
     </div>
     <table class="tbl">
         <thead>
-            <tr><th>Type</th><th>Début</th><th>Fin</th><th>Durée</th><th>Statut</th><th>Commentaire RH</th><th>Action</th></tr>
+            <tr><th>Type</th><th>Début</th><th>Fin</th><th>Durée</th><th>Statut</th><th>Action</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td><span class="type-badge t-annuel">Annuel</span></td>
-                <td class="td-muted">23 juin 2025</td>
-                <td class="td-muted">27 juin 2025</td>
-                <td class="td-mono">5 j</td>
-                <td><span class="statut s-attente">en attente</span></td>
-                <td class="td-muted" style="font-size:.78rem">—</td>
-                <td><button class="btn-sm btn-cancel" onclick="return confirm('Annuler cette demande ?')"><i class="bi bi-x"></i> Annuler</button></td>
+            <?php foreach ($conges as $conge): ?>
+            <tr class="row-<?= $conge['statut'] ?>">
+                <td><span class="type-badge t-annuel"><?= $conge['type_nom'] ?? 'N/A' ?></span></td>
+                <td class="td-muted"><?= date('d M Y', strtotime($conge['date_debut'])) ?></td>
+                <td class="td-muted"><?= date('d M Y', strtotime($conge['date_fin'])) ?></td>
+                <td class="td-mono"><?= $conge['nb_jours'] ?> j</td>
+                <td><span class="statut <?= strpos($conge['statut'], 'attente') ? 's-attente' : (strpos($conge['statut'], 'approuv') ? 's-approuvee' : 's-refusee') ?>"><?= ucfirst($conge['statut']) ?></span></td>
+                <td>
+                    <?php if ($conge['statut'] === 'en_attente'): ?>
+                    <button class="btn-sm btn-cancel" onclick="return confirm('Annuler cette demande ?')"><i class="bi bi-x"></i> Annuler</button>
+                    <?php else: ?>
+                    <span class="td-muted" style="font-size:.75rem">—</span>
+                    <?php endif; ?>
+                </td>
             </tr>
+            <?php endforeach; ?>
+            <?php if (empty($conges)): ?>
             <tr>
-                <td><span class="type-badge t-maladie">Maladie</span></td>
-                <td class="td-muted">2 juin 2025</td>
-                <td class="td-muted">3 juin 2025</td>
-                <td class="td-mono">2 j</td>
-                <td><span class="statut s-approuvee">approuvée</span></td>
-                <td style="font-size:.78rem;color:var(--success)"><i class="bi bi-check-circle"></i> Validé</td>
-                <td><span class="td-muted" style="font-size:.75rem">—</span></td>
+                <td colspan="6" style="text-align:center;padding:2rem;color:var(--muted)">
+                    <i class="bi bi-calendar2-week" style="font-size:2rem;display:block;margin-bottom:.5rem;opacity:.3"></i>
+                    Aucune demande de congé
+                </td>
             </tr>
-            <tr>
-                <td><span class="type-badge t-special">Spécial</span></td>
-                <td class="td-muted">5 avr. 2025</td>
-                <td class="td-muted">5 avr. 2025</td>
-                <td class="td-mono">1 j</td>
-                <td><span class="statut s-refusee">refusée</span></td>
-                <td style="font-size:.78rem;color:var(--danger)">Chevauchement détecté</td>
-                <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>
